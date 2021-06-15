@@ -78,6 +78,7 @@ public class Database extends SQLiteOpenHelper {
 
     public void removeTask(int taskID) {
         database.execSQL("DELETE FROM TASKS WHERE Id = " + taskID);
+        // TODO also remove all task t, where t.parent == taskID
     }
 
     public void editTask(int taskID,

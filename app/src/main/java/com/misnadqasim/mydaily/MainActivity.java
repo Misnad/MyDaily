@@ -1,7 +1,5 @@
 package com.misnadqasim.mydaily;
 
-import android.Manifest;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -9,7 +7,6 @@ import android.view.Menu;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.RequiresApi;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -56,12 +53,7 @@ public class MainActivity extends AppCompatActivity {
         customFun();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void customFun() {
-//        String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
-        requestPermissions(permissions, 1);
-
         Database database = new Database(this);
         database.addTask("Misnad", "#232323", 123, "12 JUN 1012", "12 MAY 2021", 1);
     }
